@@ -1,0 +1,9 @@
+{
+    "financeData": {
+        "purchasePrice" : "5000",
+        "deposit" : "3000",
+        "term" : "5 years",
+        "balloon" : "20"
+    }
+
+}
