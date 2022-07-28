@@ -1,5 +1,3 @@
-import { should } from "chai"
-
 class FinancePage {
     visit() {
         cy.visit("/")
@@ -52,7 +50,43 @@ class FinancePage {
     }
 
     backBtn(){
-        return cy.get('.cc-back-button'),should('exist')
+        return cy.get('.cc-back-button').should('exist')
+    }
+
+    haveAcarInMind(){
+        return cy.contains('Have a car in mind?').should('exist')
+    }
+
+    yesButton(){
+        return cy.contains('Yes').should('exist')
+    }
+
+    stillDecidingBtn(){
+        return cy.contains('Still deciding').should('exist')
+    }
+
+    howQuicklyPurchase(){
+        return cy.contains('How quickly do you want to purchase?').should('exist')
+    }
+
+    dropDown(){
+        return cy.get('.select--displayName').should('exist')
+    }
+
+    within1month(){
+        return cy.contains('Within 1 month').should('exist')
+    }
+
+    purposeText(){
+        return cy.contains('What will be the primary use of the vehicle?').should('exist')
+    }
+
+    personalUse(){
+        return cy.contains('Personal use').should('exist')
+    }
+
+    businessUse(){
+        return cy.contains('Business use').should('exist')
     }
 
     fillForm1() {
@@ -67,29 +101,5 @@ class FinancePage {
 
        })
     }
-    fillForm2() {
-        cy.fixture('finance-data').then((data) => {
-            this.purchasePriceInput().type(data.financeData.purchasePrice)
-            this.depositInput().type(data.financeData.deposit)
-            this.termInput().click()
-            this.termValue().click()
-            this.balloonInputClear()
-            this.balloonInput().type(data.financeData.balloon)
-            this.submitBtn().click()
- 
-        })
-     }
-     fillForm3() {
-        cy.fixture('finance-data').then((data) => {
-            this.purchasePriceInput().type(data.financeData.purchasePrice)
-            this.depositInput().type(data.financeData.deposit)
-            this.termInput().click()
-            this.termValue().click()
-            this.balloonInputClear()
-            this.balloonInput().type(data.financeData.balloon)
-            this.submitBtn().click()
- 
-        })
-     }
 }
 export default FinancePage

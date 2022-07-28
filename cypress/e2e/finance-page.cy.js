@@ -13,7 +13,19 @@ describe('Registration Page', () => {
     })
 
     it('Should fill up the form', () => {
-        financePage.fillForm()
+        financePage.fillForm1()
+        financePage.backBtn()
+        financePage.haveAcarInMind()
+        financePage.yesButton()
+        financePage.stillDecidingBtn().click()
+        financePage.howQuicklyPurchase()
+        financePage.dropDown().click()
+        financePage.within1month().click()
+        financePage.submitBtn().click()
+        financePage.purposeText()
+        cy.wait(3000)
+        financePage.businessUse().click()
+        financePage.submitBtn().click()
     })
 
 })
