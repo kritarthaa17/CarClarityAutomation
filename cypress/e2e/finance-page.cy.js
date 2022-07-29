@@ -39,6 +39,22 @@ describe('Registration Page', () => {
         financePage.livingStatus().click()
         financePage.ownHome().click()
         financePage.submitBtn().click()
+        cy.wait(2000)
+        financePage.relationshipStatus().click()
+        financePage.single().click()
+        financePage.dependentStatus().click()
+        financePage.dependants().click()
+        financePage.submitBtn().click()
+        cy.wait(2000)
+        financePage.creditHistoryTxt()
+        financePage.average().click()
+        financePage.submitBtn().click()
+        financePage.no().click()
+        financePage.submitBtn().click()
+        financePage.mobileTxt()
+        financePage.mobileInput()
+
+
     })
 
 })

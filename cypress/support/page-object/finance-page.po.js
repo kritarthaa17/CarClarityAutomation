@@ -125,6 +125,42 @@ class FinancePage {
         return cy.contains('I own the home I live in (without mortgage)').should('exist')
     }
 
+    relationshipStatus(){
+        return cy.get('.select--input').eq(0).should('exist')
+    }
+
+    dependentStatus(){
+        return cy.get('.select--input').eq(1).should('exist')
+    }
+
+    single(){
+        return cy.contains('Single').should('exist')
+    }
+
+    dependants(){
+        return cy.contains('4').should('exist')
+    }
+
+    creditHistoryTxt(){
+        return cy.contains('Credit history').should('exist')
+    }
+
+    average(){
+        return cy.contains('Average 500-599').should('exist')
+    }
+
+    no(){
+        return cy.contains('No').should('exist')
+    }
+
+    mobileTxt(){
+        return cy.contains('Mobile').should('exist')
+    }
+
+    mobileInput(){
+        return cy.get('input[type="number"]').should('exist')
+    }
+    
     fillForm1() {
        cy.fixture('finance-data').then((data) => {
            this.purchasePriceInput().type(data.financeData.purchasePrice)
