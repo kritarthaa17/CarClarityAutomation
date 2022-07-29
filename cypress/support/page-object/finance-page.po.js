@@ -160,7 +160,18 @@ class FinancePage {
     mobileInput(){
         return cy.get('input[type="number"]').should('exist')
     }
+
+    checkBox(){
+        return cy.get('.checkbox-component').should('exist')
+    }
     
+    inputCode(){
+        cy.get('input')
+        .should('have.length', 4)
+        .each(($input) => {
+          return cy.get($input).type("7")
+        })
+    }
     fillForm1() {
        cy.fixture('finance-data').then((data) => {
            this.purchasePriceInput().type(data.financeData.purchasePrice)

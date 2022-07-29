@@ -52,8 +52,10 @@ describe('Registration Page', () => {
         financePage.no().click()
         financePage.submitBtn().click()
         financePage.mobileTxt()
-        financePage.mobileInput()
-
+        financePage.mobileInput().type("0491 570 006")
+        financePage.checkBox().click()
+        financePage.submitBtn().click()
+        financePage.inputCode()
 
     })
 
