@@ -2,7 +2,7 @@
 #Clone the repository on your local machine
 #Run "npm install"
 #Install Cypress
-# Use  "npm run cypress" to open cypress
+#Use  "npm run cypress" to open cypress
 #run the test 
 
 

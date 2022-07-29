@@ -89,6 +89,42 @@ class FinancePage {
         return cy.contains('Business use').should('exist')
     }
 
+    workSituationTxt(){
+        return cy.contains("What is your work situation?").should('exist')
+    }
+
+    workDetailStatus(){
+        return cy.get('.select--input').should('exist')
+    }
+
+    monthlyIncome(){
+        return cy.get('input[name="monthly-income"]').should('exist')
+    }
+
+    iamAnEmployee(){
+        return cy.contains('I am an employee').should('exist')
+    }
+
+    residencyTxt(){
+        return cy.contains('Residency').should('exist')
+    }
+
+    residencyStatus(){
+        return cy.get('.select--input').eq(0).should('exist')
+    }
+
+    livingStatus(){
+        return cy.get('.select--input').eq(1).should('exist')
+    }
+
+    visaHolder(){
+        return cy.contains('Visa holder').should('exist')
+    }
+
+    ownHome(){
+        return cy.contains('I own the home I live in (without mortgage)').should('exist')
+    }
+
     fillForm1() {
        cy.fixture('finance-data').then((data) => {
            this.purchasePriceInput().type(data.financeData.purchasePrice)
